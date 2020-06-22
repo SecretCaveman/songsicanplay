@@ -1,11 +1,14 @@
 from django.test import LiveServerTestCase
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
 
 
 class NewVisitorTest(LiveServerTestCase):
 
     def setUp(self):
-        self.browser = webdriver.Firefox()
+        options = Options()
+        options.headless = True
+        self.browser = webdriver.Firefox(firefox_options=options)
 
     def tearDown(self):
         self.browser.quit()
