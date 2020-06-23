@@ -10,3 +10,6 @@ before_install:
       - export PATH=$PATH:$PWD/geckodriver
 script:
   - python manage.py test
+
+after_success:
+  - sh .travis/deploy_dockerhub.sh
