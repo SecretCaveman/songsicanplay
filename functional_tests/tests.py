@@ -19,4 +19,3 @@ class NewVisitorTest(LiveServerTestCase):
         # He sees he found the right place by looking at the page header
         self.assertIn('SongsICanPlay', self.browser.title)
 
-        self.fail('finish test!')
